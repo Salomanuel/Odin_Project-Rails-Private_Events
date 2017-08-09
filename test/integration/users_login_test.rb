@@ -21,9 +21,8 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
 		assert_select "a[href=?]", user_path(@user)
 		# logout
 		delete logout_path
-		assert redirected_to root_path
+		assert_redirected_to root_path
 		follow_redirect!
-		assert_not is_logged_in?
 		assert_select "a[href=?]", login_path
 		assert_select "a[href=?]", logout_path,	count: 0
 		assert_select "a[href=?]", user_path(@user),		count: 0
@@ -41,4 +40,4 @@ end
 # the `cookies` hash 
 # and retrieve it when necessary. 
 # It may be helpful to always display the name 
-# of three "signed in" user at the top.
+# of the "signed in" user at the top.
