@@ -12,10 +12,10 @@
     <%= yield %>
     <div class="footer">
     	<% if logged_in? %>
-	    	<%= link_to "login", 		login_path %>
-	    	<%= link_to @user.name, user_path(@user) %>
+	    	<%= link_to "logout", 	logout_path %>
+	    	<%= link_to @current_user.name, user_path(@current_user) %>
     	<% else %>
-    		<%= link_to "logout", 	logout_path %>
+	    	<%= link_to "login", 		login_path %>
     	<% end %>
     	<%= link_to "root", root_path %>
     </div>
