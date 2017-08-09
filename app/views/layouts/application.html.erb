@@ -9,6 +9,11 @@
   </head>
 
   <body>
+  	<% flash.each do |name, message| %>
+  		<div class="alert-#{name}">
+  			<%= message %>
+			</div>
+		<% end %>
     <%= yield %>
     <div class="footer">
     	<% if logged_in? %>
