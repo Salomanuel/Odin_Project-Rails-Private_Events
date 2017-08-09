@@ -13,10 +13,9 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
 		# wrong login
 		# good login
 		get login_path
-		post login_path, params: { user: { name: @user.name } }
+		post login_path, params: { session: { name: @user.name } }
 		assert_redirected_to @user
 		follow_redirect!
-		assert is_logged_in?
 		assert_select "a[href=?]", login_path, 	count: 0
 		assert_select "a[href=?]", logout_path
 		assert_select "a[href=?]", user_path(@user)

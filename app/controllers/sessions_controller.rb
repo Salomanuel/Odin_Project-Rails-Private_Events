@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
 			redirect_to user
 		else
 			flash[:danger]	= "User not found"
-			render 'new'
+			render 'new' 	
 		end
 	end
 
