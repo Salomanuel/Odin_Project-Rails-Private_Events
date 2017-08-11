@@ -6,6 +6,7 @@ class UsersController < ApplicationController
 
 	def create
 		@user = User.create(user_params)
+		log_in @user
 		redirect_to @user
 	end
 

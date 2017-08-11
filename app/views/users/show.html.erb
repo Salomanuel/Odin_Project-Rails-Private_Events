@@ -1,3 +1,8 @@
-<h1>Page for: <%=@user.name%></h1>
+<h1><%=@user.name%>'s Page</h1>
 
-<%= render 'shared/content_table'%>
+<% if @user.created_events.any? %>
+	<h2>Events created by <%=@user.name%>:</h2>
+	<%= render 'shared/content_table'%>
+<% else %>
+	<h2><%=@user.name%> hasn't created any events yet</h2>
+<% end %>
