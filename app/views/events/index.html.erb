@@ -1,3 +1,25 @@
 <h1>All events</h1>
 
-<%= render '/shared/content_table' %>
+<h2><%= link_to "create a new event", new_event_path %></h2>
+<table>
+	<thead>
+		<tr>
+			<th>event name</th>
+			<th>created by</th>
+			<th>date</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% Event.all.each do |resource| %>
+			<tr>
+				<td><%= link_to resource.name, resource%></td>
+				<td class=centered> 
+					<%= link_to resource.creator.name, resource.creator %>
+				</td>
+				<td class=centered>
+					<%= resource.date %>
+				</td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
