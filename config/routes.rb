@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
 	resources :users, 		only: [:show, :new, :create]
 	resources :sessions, 	only: [:new, :create, :destroy]
+	resources :events,		only: [:new, :create, :index, :show]
 
 	get  		'signup', to: 'users#new'
 	post 		'signup', to: 'users#create'
