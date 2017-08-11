@@ -14,7 +14,9 @@ class UsersController < ApplicationController
 	end
 
 	def index
-		@users = User.all
+		@resource 	 = User.all
+		@second_column_title  = "created events"
+		@proc = Proc.new { |arg| arg.created_events.count }
 	end
 
 	private

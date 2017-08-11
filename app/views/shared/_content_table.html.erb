@@ -1,0 +1,24 @@
+<!-- NEEDS:
+	@resource 	 					= User.all
+	@second_column_title  = "created_events"
+	@proc = Proc.new { |arg| arg.created_events.count }
+-->
+
+<table>
+	<thead>
+		<tr>
+			<th><%=@resource.first.class%> name</th>
+			<th><%=@second_column_title%></th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @resource.each do |resource| %>
+			<tr>
+				<td><%= link_to resource.name, resource%></td>
+				<td class=centered> 
+					<%= @proc.call(resource) %>
+				</td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
