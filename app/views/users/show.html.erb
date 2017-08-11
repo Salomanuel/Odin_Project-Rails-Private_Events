@@ -1,1 +1,7 @@
 <h1>Page for: <%=@user.name%></h1>
+
+<ul>
+	<% @user.created_events.each do |event| %>
+		<li><%=link_to event.name, '#' %></li>
+	<% end %>
+</ul>
