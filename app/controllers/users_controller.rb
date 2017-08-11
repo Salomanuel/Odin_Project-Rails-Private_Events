@@ -11,6 +11,10 @@ class UsersController < ApplicationController
 
 	def show
 		@user = User.find(params[:id])
+		# TABLE
+		@resource 	 					= @user.created_events
+		@second_column_title  = "date"
+		@proc = Proc.new { |arg| arg.date }
 	end
 
 	def index
