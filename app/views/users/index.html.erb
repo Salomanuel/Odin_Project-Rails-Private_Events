@@ -1,0 +1,26 @@
+<head>
+	<style>
+		.created_events { text-align: center;	}
+	</style>
+</head>
+
+<h1> all users </h1>
+
+<table>
+	<thead>
+		<tr>
+			<th>User name</th>
+			<th>Created events</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @users.each do |user| %>
+			<tr>
+				<td><%= link_to user.name, user %></td>
+				<td class=created_events>
+						<%= user.created_events.count%>		
+				</td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
