@@ -24,12 +24,12 @@
     	<% if logged_in? %>
 	    	<%= link_to "logout", 	logout_path, method: :delete %>
 	    	<%= link_to "profile of #{@current_user.name}", current_user %>
-    	<% else %>
+        <br><%= link_to "users",  users_path %>
+            <%= link_to "events", events_path %>
+      <% else %>
 	    	<%= link_to "login", 		login_path %>
+        <%= link_to "signup",   signup_path %>
     	<% end %>
-    	<br><%= link_to "<< root", root_path %>
-      <br><%= link_to "users",  users_path %>
-          <%= link_to "events", events_path %>
     </div>
   </body>
 </html>
