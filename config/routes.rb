@@ -2,8 +2,8 @@ Rails.application.routes.draw do
 
 	root 'sessions#new'
 
-	resources :users
-	resources :sessions
+	resources :users, 		only: [:show, :new, :create]
+	resources :sessions, 	only: [:new, :create, :destroy]
 
 	get  		'signup', to: 'users#new'
 	post 		'signup', to: 'users#create'
