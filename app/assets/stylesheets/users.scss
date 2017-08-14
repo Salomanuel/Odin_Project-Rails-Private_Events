@@ -1,3 +1,24 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.header {	display: block; }
+
+// for the system links on the header menu
+.system { float: right; } 
+
+a { text-decoration: none; }
+
+li { 	
+	margin: 10px;
+	float: left;
+	list-style-type: none;
+}
+
+// tables
+.centered { text-align: center; }
+table { border-collapse: collapse; }
+td,th { 
+	border: 1px white solid; 
+	padding: 5px;
+}
