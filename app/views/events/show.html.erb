@@ -1,3 +1,4 @@
 <h1><%= @event.name %></h1>
-<h3>date: <%= @event.date %></h3>
-<h3>creator: <%= link_to @event.creator.name, @event.creator %></h3>
+<h2>date: <%= @event.date %></h2>
+<h2>creator: <%= link_to @event.creator.name, @event.creator %></h2>
+<h2>attendees: <%=(@event.attendees.count)%></h2>
