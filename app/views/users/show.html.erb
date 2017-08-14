@@ -6,3 +6,9 @@
 <% else %>
 	<h2><%=@user.name%> hasn't created any events yet</h2>
 <% end %>
+
+<% if @user.invitations.any? %>
+	<h2>Invitations:</h2>
+<% else %>
+	<h2>no</h2>
+<% end %>
