@@ -16,6 +16,7 @@ class EventsController<ApplicationController
 
 	def create
 		@event = current_user.created_events.create(events_params)
+		Invitation.create(attendee_id: current_user.id, attended_event_id: @event.id)
 		redirect_to @event
 	end
 
