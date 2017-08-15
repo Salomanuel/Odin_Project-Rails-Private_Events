@@ -12,3 +12,10 @@
 		<% end %>
 	</ul>
 <% end %> 	
+<h2>invite a user</h2>
+<%= form_for @invitation do |f| %>
+
+	<%= f.collection_select(:attendee_id, User.all, :id, :name) %>
+	<%= f.hidden_field :attended_event_id, :value => @event.id %>
+	<%= f.submit %>
+<% end %>

@@ -2,9 +2,10 @@ Rails.application.routes.draw do
 
 	root 'sessions#new'
 
-	resources :users, 		only: [:new, :create, :index, :show]
-	resources :sessions, 	only: [:new, :create, :destroy]
-	resources :events,		only: [:new, :create, :index, :show]
+	resources :users, 			only: [:new, :create, :index, :show]
+	resources :sessions, 		only: [:new, :create, :destroy]
+	resources :events,			only: [:new, :create, :index, :show]
+	resources :invitations, only: [:new, :create]
 
 	get  		'signup', to: 'users#new'
 	post 		'signup', to: 'users#create'
