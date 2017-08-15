@@ -4,20 +4,26 @@
 <table>
 	<thead>
 		<tr>
+			<th>id</th>
 			<th>event name</th>
 			<th>created by</th>
 			<th>date</th>
+			<th>participants</th>
 		</tr>
 	</thead>
 	<tbody>
 		<% Event.all.each do |resource| %>
 			<tr>
+				<td class=centered><%= resource.id %>
 				<td><%= link_to resource.name, resource%></td>
 				<td class=centered> 
 					<%= link_to resource.creator.name, resource.creator %>
 				</td>
 				<td class=centered>
 					<%= resource.date %>
+				</td>
+				<td class=centered>
+					<%= resource.attendees.count %>
 				</td>
 			</tr>
 		<% end %>
