@@ -5,14 +5,17 @@
 .header {	display: block; }
 
 // for the system links on the header menu
-.system { float: right; } 
+ 
 
 a { text-decoration: none; }
 
-li { 	
-	margin: 10px;
-	float: left;
-	list-style-type: none;
+.header {		
+	li { 	
+			margin: 10px;
+			float: left;
+			list-style-type: none;
+		} 
+	.system { float: right; }
 }
 
 // tables
