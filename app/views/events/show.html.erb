@@ -1,4 +1,14 @@
 <h1><%= @event.name %></h1>
 <h2>date: <%= @event.date %></h2>
-<h2>creator: <%= link_to @event.creator.name, @event.creator %></h2>
-<h2>attendees: <%=(@event.attendees.count)%></h2>
+<% if @event.attendees.any? %>
+	<h2><%= pluralize(@event.attendees.count, 'attendee') %>:</h2>
+	<ul>
+		<% @event.attendees.each do |u| %>
+			<% if u == @event.creator %>
+				<li><h3><%= link_to u.name, u %> (host)</h3></li>
+			<% else %>
+				<li><%= link_to u.name, u %></li>
+			<% end %>
+		<% end %>
+	</ul>
+<% end %> 	
