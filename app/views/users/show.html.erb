@@ -9,6 +9,11 @@
 
 <% if @user.invitations.any? %>
 	<h2>Invitations:</h2>
+	<ul>
+		<% @user.attended_events.each do |e| %>
+			<li><%=e.name%></li>
+		<% end %>
+	</ul>
 <% else %>
 	<h2><%=@user.name%> still hasn't invitations</h2>
 <% end %>
