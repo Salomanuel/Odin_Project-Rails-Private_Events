@@ -9,11 +9,24 @@
 
 <% if @user.invitations.any? %>
 	<h2>Invitations:</h2>
-	<ul>
-		<% @user.attended_events.each do |e| %>
-			<li><%=e.name%></li>
+	<table>
+		<thead>
+			<tr>
+				<th><%=@resource.first.class%> name</th>
+				<th><%=@second_column_title%></th>
+			</tr>
+		</thead>
+	<tbody>
+		<% @user.attended_events.each do |resource| %>
+			<tr>
+				<td><%= link_to resource.name, resource%></td>
+				<td class=centered> 
+					<%= @proc.call(resource) %>
+				</td>
+			</tr>
 		<% end %>
-	</ul>
+	</tbody>
+</table>
 <% else %>
 	<h2><%=@user.name%> still hasn't invitations</h2>
 <% end %>

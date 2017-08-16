@@ -2,8 +2,30 @@
 	<li>duplicated invitations (same user attending twice same event)</li>
 	<li>username and event name validations</li>
 	<li>nice css</li>
+	<li>clean all the tables mess</li>
 </ul>
 
 <h1> all users </h1>
 
-<%= render 'shared/content_table' %>
+<table>
+	<thead>
+		<tr>
+			<th><%=@users.first.class%> name</th>
+			<th>created events</th>
+			<th>invitations</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @users.each do |user| %>
+			<tr>
+				<td><%= link_to user.name, user%></td>
+				<td class=centered> 
+					<%= user.created_events.count %>
+				</td>
+				<td class=centered>
+					<%= user.attended_events.count %>
+				</td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
