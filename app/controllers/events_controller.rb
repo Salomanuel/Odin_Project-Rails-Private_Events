@@ -1,9 +1,10 @@
 class EventsController<ApplicationController
 
 	def index 
-		@resource 	 = Event.all
 		@second_column_title  = "created by"
 		@proc = Proc.new { |arg| arg.creator.name }
+		@upcoming_events = Event.upcoming_events
+		@prev_events 		 = Event.prev_events
 	end
 
 	def show
