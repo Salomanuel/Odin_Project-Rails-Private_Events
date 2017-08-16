@@ -16,6 +16,8 @@ class UsersController < ApplicationController
 		@resource 	 					= @user.created_events
 		@second_column_title  = "date"
 		@proc = Proc.new { |arg| arg.date }
+		@prev_events 			= @user.attended_events.prev_events
+		@upcoming_events 	= @user.attended_events.upcoming_events
 	end
 
 	def index
